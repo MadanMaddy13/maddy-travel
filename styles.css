@@ -1,0 +1,453 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+}
+
+.brand-name {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #0066cc;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.menu li a:hover {
+  color: #0066cc;
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 4px;
+  top: 30px;
+}
+
+.dropdown-content li {
+  padding: 5px 15px;
+}
+
+.dropdown-content li a {
+  color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.auth-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  background: #0066cc;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-buttons button:hover {
+  background: #004c99;
+}
+
+/* HERO SECTION */
+.hero {
+  background: url('assets/hero.jpg') no-repeat center center/cover;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-top: 70px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 2em;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin: 15px 0;
+}
+
+.highlight {
+  color: #00ccff;
+}
+
+.book-now {
+  padding: 12px 28px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 4px;
+  background: #00ccff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.book-now:hover {
+  background: #0099cc;
+}
+
+/* --- NAVBAR & HERO (same as before) --- */
+/* reuse from previous version */
+
+/* BOOKING SECTION */
+.booking {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 60px 80px;
+  background: #f5f9ff;
+  align-items: center;
+}
+
+.booking-left,
+.booking-right {
+  flex: 1 1 50%;
+  padding: 20px;
+}
+
+.booking-left img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.booking-right h2 {
+  color: #0066cc;
+  margin-bottom: 20px;
+}
+
+.booking-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-right input,
+.booking-right select,
+.booking-right textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.booking-right button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.booking-right button:hover {
+  background: #004c99;
+}
+
+/* PACKAGES */
+.packages {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.packages h2 {
+  color: #0066cc;
+  margin-bottom: 40px;
+}
+
+.package-grid {
+  display: grid;
+grid-template-columns: repeat(3, 1fr);  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 150px; 
+  border-radius: 10px 10px 0 0;
+  object-fit: contain; 
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin: 15px 0 5px;
+  color: #0066cc;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 10px 18px;
+  border: none;
+  background: #00ccff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #0099cc;
+}
+
+/* SERVICES */
+.services {
+  background: #f0f7ff;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.services h2 {
+  color: #0066cc;
+  margin-bottom: 40px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 25px;
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.service-card h3 {
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+/* GALLERY SECTION */
+.gallery {
+  padding: 60px 40px;
+  text-align: center;
+  background: #eef7ff;
+}
+
+.gallery h2 {
+  color: #0066cc;
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-card p {
+  padding: 10px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+
+/* ABOUT SECTION */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 60px 80px;
+  align-items: center;
+}
+
+.about-left,
+.about-right {
+  flex: 1 1 50%;
+  padding: 20px;
+}
+
+.about-left img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about-right h2 {
+  color: #0066cc;
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+.footer {
+  background: #0066cc;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer .social-icons {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* AUTH PAGES */
+.auth-page {
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-container input, .auth-container select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-container button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background-color: #0056b3;
+}
+
+.auth-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+
+
